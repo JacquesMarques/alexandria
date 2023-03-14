@@ -39,6 +39,11 @@ gem "bootsnap", require: false
 # Autoload dotenv in Rails.
 gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 
+# Upload files in your Ruby applications, map them to a range of ORMs, store them on different backends.
+gem 'carrierwave', '~> 2.2', '>= 2.2.3'
+# This gem can be useful, if you need to upload files to your API from mobile devises.
+gem 'carrierwave-base64', '~> 2.10'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
