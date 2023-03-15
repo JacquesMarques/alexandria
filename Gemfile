@@ -43,6 +43,8 @@ gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 gem 'carrierwave', '~> 2.2', '>= 2.2.3'
 # This gem can be useful, if you need to upload files to your API from mobile devises.
 gem 'carrierwave-base64', '~> 2.10'
+# Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated paginator
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
