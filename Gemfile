@@ -8,7 +8,8 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.4', '>= 1.4.6'
-
+# PgSearch builds Active Record named scopes that take advantage of PostgreSQL's full text search
+gem 'pg_search', '~> 2.3', '>= 2.3.6'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
