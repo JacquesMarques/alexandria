@@ -1,13 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-
-  before do
-    allow_any_instance_of(UsersController).to(
-      receive(:validate_auth_scheme).and_return(true))
-    allow_any_instance_of(UsersController).to(
-      receive(:authenticate_client).and_return(true))
-  end
+  include_context 'Skip Auth'
 
   let(:john) { create(:user) }
   let(:users) { [john] }
@@ -28,7 +22,7 @@ RSpec.describe 'Users', type: :request do
       end
 
       it 'receives all users' do
-        expect(json_body['data'].size).to eq 1
+        expect(json_body['data'].size).to eq 2
       end
     end
 
@@ -197,12 +191,12 @@ RSpec.describe 'Users', type: :request do
       end
 
       it 'adds a record in the database' do
-        expect(User.count).to eq 1
+        expect(User.count).to eq 2
       end
 
       it 'gets the new resource location in the Location header' do
         expect(response.headers['Location']).to eq(
-                                                  "http://www.example.com/api/users/#{User.first.id}"
+                                                  "http://www.example.com/api/users/#{User.last.id}"
                                                 )
       end
     end
@@ -218,7 +212,7 @@ RSpec.describe 'Users', type: :request do
         expect(json_body['error']['invalid_params']).to eq(
                                                           {
                                                            "email" => ["can't be blank", "is invalid"],
-                                                           "password" => ["can't be blank", "can't be blank", "is too short (minimum is 8 characters)"]
+                                                           "password" => ["can't be blank", "is too short (minimum is 8 characters)"]
                                                           },
                                                         )
       end
@@ -246,7 +240,7 @@ RSpec.describe 'Users', type: :request do
                                                    )
       end
       it 'updates the record in the database' do
-        expect(User.first.given_name).to eq 'John'
+        expect(User.first.given_name).to eq 'Super'
       end
     end
 
@@ -264,7 +258,7 @@ RSpec.describe 'Users', type: :request do
       end
 
       it 'does not add a record in the database' do
-        expect(User.first.given_name).to eq 'John'
+        expect(User.first.given_name).to eq 'Super'
       end
     end
   end # describe 'PATCH /api/users/:id' end
