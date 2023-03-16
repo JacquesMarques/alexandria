@@ -23,7 +23,7 @@ gem "puma", "~> 5.0"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
@@ -42,8 +42,10 @@ gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 
 # Upload files in your Ruby applications, map them to a range of ORMs, store them on different backends.
 gem 'carrierwave', '~> 2.2', '>= 2.2.3'
+
 # This gem can be useful, if you need to upload files to your API from mobile devises.
 gem 'carrierwave-base64', '~> 2.10'
+
 # Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated paginator
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
 
