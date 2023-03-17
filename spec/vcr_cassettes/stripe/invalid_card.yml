@@ -1,0 +1,181 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/tokens
+    body:
+      encoding: UTF-8
+      string: card[number]=4000000000000002&card[exp_month]=6&card[exp_year]=2028&card[cvc]=314
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/8.3.0
+      Authorization:
+      - Bearer sk_test_51HHbGkJ0p1Qrmpqep0gjxe70BCH0WtY3OCAQScsQhCeztGpEFsCUgLhh43paYqEQH85ZhB2tFwTBV3UGhDnfhWzl00fbqK4ZSW
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_6fbNUHoLgh7bkd","request_duration_ms":1437}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"8.3.0","lang":"ruby","lang_version":"3.1.2 p20 (2022-04-12)","platform":"arm64-darwin21","engine":"ruby","publisher":"stripe","uname":"Darwin
+        Jacquess-MacBook-Pro.local 22.3.0 Darwin Kernel Version 22.3.0: Mon Jan 30
+        20:38:37 PST 2023; root:xnu-8792.81.3~2/RELEASE_ARM64_T6000 arm64","hostname":"Jacquess-MacBook-Pro.local"}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 17 Mar 2023 12:27:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '780'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - 12c335f9-0fcb-4c53-9a1e-67e19d6d4807
+      Original-Request:
+      - req_k2H2ENUOmS0nI1
+      Request-Id:
+      - req_k2H2ENUOmS0nI1
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2020-03-02'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "id": "tok_1MmcNAJ0p1Qrmpqe9KOxMoAp",
+          "object": "token",
+          "card": {
+            "id": "card_1MmcN9J0p1Qrmpqe6ugkjYnM",
+            "object": "card",
+            "address_city": null,
+            "address_country": null,
+            "address_line1": null,
+            "address_line1_check": null,
+            "address_line2": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_zip_check": null,
+            "brand": "Visa",
+            "country": "US",
+            "cvc_check": "unchecked",
+            "dynamic_last4": null,
+            "exp_month": 6,
+            "exp_year": 2028,
+            "fingerprint": "O82J1mumwpOgQI8h",
+            "funding": "credit",
+            "last4": "0002",
+            "metadata": {},
+            "name": null,
+            "tokenization_method": null
+          },
+          "client_ip": "177.203.210.87",
+          "created": 1679056024,
+          "livemode": false,
+          "type": "card",
+          "used": false
+        }
+  recorded_at: Fri, 17 Mar 2023 12:27:03 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/charges
+    body:
+      encoding: UTF-8
+      string: amount=299&currency=BRL&source=tok_1MmcNAJ0p1Qrmpqe9KOxMoAp&metadata[purchase_id]=2&description=Charge+for+Ruby+Under+a+Microscope+%28Purchase+ID+2%29
+    headers:
+      User-Agent:
+      - Stripe/v1 RubyBindings/8.3.0
+      Authorization:
+      - Bearer sk_test_51HHbGkJ0p1Qrmpqep0gjxe70BCH0WtY3OCAQScsQhCeztGpEFsCUgLhh43paYqEQH85ZhB2tFwTBV3UGhDnfhWzl00fbqK4ZSW
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-Telemetry:
+      - '{"last_request_metrics":{"request_id":"req_k2H2ENUOmS0nI1","request_duration_ms":523}}'
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"8.3.0","lang":"ruby","lang_version":"3.1.2 p20 (2022-04-12)","platform":"arm64-darwin21","engine":"ruby","publisher":"stripe","uname":"Darwin
+        Jacquess-MacBook-Pro.local 22.3.0 Darwin Kernel Version 22.3.0: Mon Jan 30
+        20:38:37 PST 2023; root:xnu-8792.81.3~2/RELEASE_ARM64_T6000 arm64","hostname":"Jacquess-MacBook-Pro.local"}'
+      Idempotency-Key:
+      - 2023-03-17 09:27:03 -0300/2/2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 402
+      message: Payment Required
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 17 Mar 2023 12:27:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '366'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Request-Id, Stripe-Manage-Version, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Idempotency-Key:
+      - 2023-03-17 09:27:03 -0300/2/2
+      Original-Request:
+      - req_zMCriKGBmso8uF
+      Request-Id:
+      - req_zMCriKGBmso8uF
+      Stripe-Should-Retry:
+      - 'false'
+      Stripe-Version:
+      - '2020-03-02'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "error": {
+            "charge": "ch_3MmcNAJ0p1Qrmpqe1ZXn7ExA",
+            "code": "card_declined",
+            "decline_code": "generic_decline",
+            "doc_url": "https://stripe.com/docs/error-codes/card-declined",
+            "message": "Your card was declined.",
+            "request_log_url": "https://dashboard.stripe.com/test/logs/req_zMCriKGBmso8uF?t=1679056024",
+            "type": "card_error"
+          }
+        }
+  recorded_at: Fri, 17 Mar 2023 12:27:04 GMT
+recorded_with: VCR 6.1.0

@@ -6,6 +6,8 @@ FactoryBot.define do
     isbn_13 { '9781593275617' }
     description { 'Ruby Under a Microscope is a cool book!' }
     released_on { '2013-09-01' }
+    price_cents { 299 }
+    price_currency { 'BRL' }
     publisher
     author
   end
@@ -17,6 +19,8 @@ FactoryBot.define do
     isbn_13 { '9780134077703' }
     description { 'The Rails Tutorial is great!' }
     released_on { '2013-05-09' }
+    price_cents { 299 }
+    price_currency { 'BRL' }
     publisher_id { nil }
     association :author, factory: :michael_hartl
   end
@@ -28,6 +32,8 @@ FactoryBot.define do
     isbn_13 { '9781937785567' }
     description { 'Stay agile!' }
     released_on { '2015-10-11' }
+    price_cents { 299 }
+    price_currency { 'BRL' }
     publisher
     association :author, factory: :sam_ruby
   end

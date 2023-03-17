@@ -52,6 +52,12 @@ gem 'kaminari', '~> 1.2', '>= 1.2.2'
 # Object oriented authorization for Rails applications
 gem 'pundit', '~> 2.3'
 
+# This library provides integration of RubyMoney - Money gem with Rails
+gem 'money-rails', '~> 1.15'
+
+# Stripe is the easiest way to accept payments online. See https://stripe.com for details.
+gem 'stripe', '~> 8.3'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -59,6 +65,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
   # provides integration between factory_bot and rails 5.0 or newer
   gem 'factory_bot_rails', '~> 6.2'
+  # Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests.
+  gem 'vcr'
 end
 
 group :development do

@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   before_validation :generate_confirmation_token, on: :create
   before_validation :downcase_email
+  has_many :purchases
+  has_many :books, through: :purchases
 
   enum role: [:user, :admin]
 
