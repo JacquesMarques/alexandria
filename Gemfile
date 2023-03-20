@@ -58,6 +58,13 @@ gem 'money-rails', '~> 1.15'
 # Stripe is the easiest way to accept payments online. See https://stripe.com for details.
 gem 'stripe', '~> 8.3'
 
+# The fastest JSON parser and object serialize
+# r.
+gem 'oj', '~> 3.14', '>= 3.14.2'
+
+# Middleware that will make Rack-based apps CORS compatible.
+gem 'rack-cors', '~> 2.0', '>= 2.0.1', :require => 'rack/cors'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

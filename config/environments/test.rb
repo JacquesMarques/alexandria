@@ -59,4 +59,8 @@ Rails.application.configure do
   # config.action_view.annotate_rendered_view_with_filenames = true
 
   default_url_options[:host] = 'localhost:3000'
+
+  config.action_mailer.perform_caching = true
+  config.cache_store = :null_store
+
 end
